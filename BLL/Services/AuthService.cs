@@ -35,5 +35,28 @@ namespace BLL.Services
             }
             return null;
         }
+
+        public static bool IsTokenValid(string tkey)
+        {
+            var extk = DataAccessFactory.TokenData().Read(tkey);
+            if (extk != null && extk.DeletedAt == null)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public static bool Logout(string tkey)
+        {
+            var extk = DataAccessFactory.TokenData().Read(tkey);
+            extk.DeletedAt = DateTime.Now;
+            if (DataAccessFactory.TokenData().Update(extk) != null)
+            {
+                return true;
+            }
+            return false;
+
+
+        }
     }
 }

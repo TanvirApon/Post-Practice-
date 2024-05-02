@@ -1,13 +1,16 @@
 ﻿using BLL.Services;
+using Recipe.Auth;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace Recipe.Controllers
 {
+    [EnableCors("*", "*", "*")]
     public class PostController : ApiController
     {
         [HttpGet]
@@ -24,7 +27,7 @@ namespace Recipe.Controllers
                 return Request.CreateResponse(HttpStatusCode.InternalServerError, new { Message = ex.Message });
             }
         }
-
+        [Logged]
         [HttpGet]
         [Route("api/posts/{id}/comments")]
         public HttpResponseMessage PostComments(int id)
