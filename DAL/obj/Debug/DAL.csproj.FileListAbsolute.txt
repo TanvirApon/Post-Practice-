@@ -12,3 +12,4 @@ F:\Asp.net\Recipe\DAL\obj\Debug\DAL.dll
 F:\Asp.net\Recipe\DAL\obj\Debug\DAL.pdb
 F:\Asp.net\Recipe\DAL\obj\Debug\DAL.Migrations.initDB.resources
 F:\Asp.net\Recipe\DAL\obj\Debug\DAL.csproj.GenerateResource.cache
+F:\Asp.net\Recipe\DAL\obj\Debug\DAL.Migrations.TokenDb.resources

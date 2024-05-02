@@ -24,5 +24,24 @@ namespace Recipe.Controllers
                 return Request.CreateResponse(HttpStatusCode.InternalServerError, new { Message = ex.Message });
             }
         }
+
+        [HttpGet]
+        [Route("api/posts/{id}/comments")]
+        public HttpResponseMessage PostComments(int id)
+        {
+            try
+            {
+                var data = PostService.GetwithComments(id);
+                return Request.CreateResponse(HttpStatusCode.OK, data);
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, new { Message = ex.Message });
+            }
+        }
+
+
+
+
     }
 }
